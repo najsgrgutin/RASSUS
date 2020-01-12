@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\dmicic\\Desktop\\faks\\rasp\\lab\\projekt\\auth_service\\AuthService\\AuthService.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\dmicic\\Desktop\\faks\\rasp\\lab\\projekt\\auth_service\\AuthService\\AuthService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\dmicic\\Desktop\\faks\\rasp\\lab\\projekt\\auth_service\\AuthService\\AuthService.csproj",
+        "projectName": "AuthService",
+        "projectPath": "C:\\Users\\dmicic\\Desktop\\faks\\rasp\\lab\\projekt\\auth_service\\AuthService\\AuthService.csproj",
+        "packagesPath": "C:\\Users\\dmicic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dmicic\\Desktop\\faks\\rasp\\lab\\projekt\\auth_service\\AuthService\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\dmicic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/Span-IDM/_packaging/Span-IDM%40Local/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/SpanClients/_packaging/SpanClients/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/SpanMcD/_packaging/Helpers/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/SpanMcD/_packaging/UniversalPlug/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
