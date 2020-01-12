@@ -1,0 +1,5 @@
+keycloak/standalone/configuration/logging.properties
+keycloak/standalone/data/keycloak.lock.db
+keycloak/standalone/data/keycloak.mv.db
+keycloak/standalone/log/server.log
+keycloak/standalone/tmp/startup-marker
