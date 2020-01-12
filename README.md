@@ -1,0 +1,2 @@
+# RASSUS
+RASSUS projekt/seminar
