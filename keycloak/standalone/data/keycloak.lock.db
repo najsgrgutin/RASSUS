@@ -1,6 +1,6 @@
 #FileLock
-#Sun Jan 12 18:34:24 CET 2020
-server=192.168.0.36\:63075
+#Mon Jan 13 20:32:37 CET 2020
+server=192.168.0.36\:58518
 hostName=NB-ZAMJENA21.span.bay
 method=file
-id=16f9ad22914eaed48df5e6b57e576c4d1aa4be69da4
+id=16fa064c04f3c6d568e3599be293aff83abdbfb2030
