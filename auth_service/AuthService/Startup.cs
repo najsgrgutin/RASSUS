@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using System.IO;
+using System.Security.Cryptography;
+using AuthService.Helpers;
 
 namespace AuthService
 {
@@ -30,6 +25,15 @@ namespace AuthService
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            RsaSecurityKey signingKey = null;
+
+            using (RSA publicRsa = RSA.Create())
+            {
+                var publicKeyXml = File.ReadAllText(Configuration.GetSection("rsaPublic").Value);
+                RsaParametersHelper.FromXmlString(publicRsa, publicKeyXml);
+                signingKey = new RsaSecurityKey(publicRsa);
+            }
+
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -42,7 +46,7 @@ namespace AuthService
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("Secret").Value)),
+                    IssuerSigningKey = signingKey,
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     ValidateLifetime = true
@@ -63,7 +67,7 @@ namespace AuthService
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseCors(b =>
             {
