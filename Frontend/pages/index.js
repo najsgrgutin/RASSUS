@@ -40,15 +40,15 @@ const Login = () => {
     })
       .then(res => {
         if (res.request.status === 200) {
-          jwt.verify(res.data.access_token, publicKey, (err, decoded) => {
-            if (err) {
-              console.log("Token couldn't be verified");
-            } else {
-              console.log(decoded);
+          // jwt.verify(res.data.access_token, publicKey, (err, decoded) => {
+          //   if (err) {
+          //     console.log("Token couldn't be verified");
+          //   } else {
+          //     console.log(decoded);
               localStorage.setItem("token", res.data.access_token);
               Router.push("/mail");
-            }
-          });
+          //   }
+          // });
         } else {
           console.log("Something went wrong");
         }

@@ -1,5 +1,73 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/mail.js"],{
 
+/***/ "./components/Modal.js":
+/*!*****************************!*\
+  !*** ./components/Modal.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_Modal_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/Modal.module.css */ "./styles/Modal.module.css");
+/* harmony import */ var _styles_Modal_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_Modal_module_css__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/matejjuric/Desktop/RassusLabosProfila/RASSUS/Frontend/components/Modal.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+var Modal = function Modal(_ref) {
+  var showModal = _ref.showModal,
+      setShowModal = _ref.setShowModal;
+
+  var onCloseModal = function onCloseModal() {
+    setShowModal(false);
+  };
+
+  var stopPropagation = function stopPropagation(event) {
+    event.stopPropagation();
+  };
+
+  if (showModal) {
+    return __jsx("div", {
+      className: _styles_Modal_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.modalContainer,
+      onClick: onCloseModal,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }, __jsx("div", {
+      className: _styles_Modal_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.modal,
+      onClick: stopPropagation,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }, __jsx("h3", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
+    }, showModal), __jsx("button", {
+      onClick: onCloseModal,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }, "Ok")));
+  } else return null;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Modal);
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js ***!
@@ -30,17 +98,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/get-iterator */ "./n
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/is-iterable */ "./node_modules/core-js/library/fn/is-iterable.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "./node_modules/core-js/library/fn/json/stringify.js");
 
 /***/ }),
 
@@ -576,22 +633,6 @@ module.exports = __webpack_require__(/*! ../modules/core.get-iterator */ "./node
 __webpack_require__(/*! ../modules/web.dom.iterable */ "./node_modules/core-js/library/modules/web.dom.iterable.js");
 __webpack_require__(/*! ../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
 module.exports = __webpack_require__(/*! ../modules/core.is-iterable */ "./node_modules/core-js/library/modules/core.is-iterable.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/fn/json/stringify.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/core-js/library/fn/json/stringify.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var core = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js");
-var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
-module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
-  return $JSON.stringify.apply($JSON, arguments);
-};
 
 
 /***/ }),
@@ -4084,10 +4125,10 @@ module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmail&absolutePagePath=%2FUsers%2Fmatejjuric%2FDesktop%2FFrontend%2Fpages%2Fmail.js!./":
-/*!*****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmail&absolutePagePath=%2FUsers%2Fmatejjuric%2FDesktop%2FFrontend%2Fpages%2Fmail.js ***!
-  \*****************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmail&absolutePagePath=%2FUsers%2Fmatejjuric%2FDesktop%2FRassusLabosProfila%2FRASSUS%2FFrontend%2Fpages%2Fmail.js!./":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmail&absolutePagePath=%2FUsers%2Fmatejjuric%2FDesktop%2FRassusLabosProfila%2FRASSUS%2FFrontend%2Fpages%2Fmail.js ***!
+  \***********************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6742,55 +6783,57 @@ try {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
 /* harmony import */ var _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/Mail.module.css */ "./styles/Mail.module.css");
 /* harmony import */ var _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/Users/matejjuric/Desktop/RassusLabosProfila/RASSUS/Frontend/pages/mail.js";
 
-var _jsxFileName = "/Users/matejjuric/Desktop/Frontend/pages/mail.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
 
 var Mail = function Mail() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
       subject = _useState[0],
       setSubject = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
       to = _useState2[0],
       setTo = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
-      mailBody = _useState3[0],
-      setMailBody = _useState3[1];
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      body = _useState3[0],
+      setbody = _useState3[1];
+
+  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      showModal = _useState4[0],
+      setShowModal = _useState4[1];
 
   var onSubmit = function onSubmit() {
     var mail = {
       subject: subject,
       to: to,
-      mailBody: mailBody
+      body: body
     };
+    setShowModal("Mail sent");
     console.log(mail);
-    fetch("http://localhost:3000/micic", {
+    /* fetch("http://localhost:3000/micic", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
         "Authorization": "JWT " + localStorage.getItem("token")
       },
-      body: _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(mail)
-    }).then(function (res) {
-      return res.json();
-    }).then(function (res) {
-      return console.log(res);
-    });
+      body: JSON.stringify(mail)
+    })
+      .then(res => res.json())
+      .then(res => console.log(res)); */
   };
 
   var handleChange = function handleChange(setterFunction) {
@@ -6801,131 +6844,146 @@ var Mail = function Mail() {
 
   var onLogout = function onLogout() {
     localStorage.removeItem("token");
-    next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push("/login");
+    next_router__WEBPACK_IMPORTED_MODULE_1___default.a.push("/");
   };
 
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("div", {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (!localStorage.getItem("token")) next_router__WEBPACK_IMPORTED_MODULE_1___default.a.push("/");
+  }, []);
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.containerStyle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 47
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 48
     },
     __self: this
   }, "Subject"), __jsx("input", {
     value: subject,
     onChange: handleChange(setSubject),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
-  }), " ", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
-  }), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
-  }), __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: this
-  }, "To"), __jsx("input", {
-    value: to,
-    onChange: handleChange(setTo),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  }), " ", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  }), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  }), __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45
-    },
-    __self: this
-  }, "Body"), __jsx("textarea", {
-    value: mailBody,
-    onChange: handleChange(setMailBody),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46
-    },
-    __self: this
-  }), " ", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46
-    },
-    __self: this
-  }), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46
-    },
-    __self: this
-  })), __jsx("button", {
-    className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.buttonStyle,
-    onClick: onSubmit,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: this
-  }, "Submit"), " ", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: this
-  }), __jsx("button", {
-    className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.buttonStyle,
-    onClick: onLogout,
+    className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.subjectInput,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 49
     },
     __self: this
-  }, "Logout"));
+  }), " ", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: this
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: this
+  }), __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: this
+  }, "To"), __jsx("input", {
+    value: to,
+    onChange: handleChange(setTo),
+    className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.toInput,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }), " ", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }), __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: this
+  }, "Body"), __jsx("textarea", {
+    value: body,
+    onChange: handleChange(setbody),
+    className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.bodyInput,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
+  }), " ", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
+  })), __jsx("div", {
+    className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.buttonContainer,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: this
+  }, __jsx("button", {
+    className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.buttonStyle,
+    onClick: onSubmit,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: this
+  }, "Submit"), __jsx("button", {
+    className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.buttonStyle,
+    onClick: onLogout,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: this
+  }, "Logout")), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    showModal: showModal,
+    setShowModal: setShowModal,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Mail);
 
 /***/ }),
 
-/***/ 8:
-/*!*********************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fmail&absolutePagePath=%2FUsers%2Fmatejjuric%2FDesktop%2FFrontend%2Fpages%2Fmail.js ***!
-  \*********************************************************************************************************************************/
+/***/ 0:
+/*!***************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fmail&absolutePagePath=%2FUsers%2Fmatejjuric%2FDesktop%2FRassusLabosProfila%2FRASSUS%2FFrontend%2Fpages%2Fmail.js ***!
+  \***************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fmail&absolutePagePath=%2FUsers%2Fmatejjuric%2FDesktop%2FFrontend%2Fpages%2Fmail.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmail&absolutePagePath=%2FUsers%2Fmatejjuric%2FDesktop%2FFrontend%2Fpages%2Fmail.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fmail&absolutePagePath=%2FUsers%2Fmatejjuric%2FDesktop%2FRassusLabosProfila%2FRASSUS%2FFrontend%2Fpages%2Fmail.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmail&absolutePagePath=%2FUsers%2Fmatejjuric%2FDesktop%2FRassusLabosProfila%2FRASSUS%2FFrontend%2Fpages%2Fmail.js!./");
 
 
 /***/ }),
@@ -6941,5 +6999,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[8,"static/runtime/webpack.js","styles"]]]);
+},[[0,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=mail.js.map

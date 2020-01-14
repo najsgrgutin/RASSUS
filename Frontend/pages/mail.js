@@ -1,19 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Router from "next/router";
+import Modal from "../components/Modal";
 import styles from "../styles/Mail.module.css";
 
 const Mail = () => {
   const [subject, setSubject] = useState("");
   const [to, setTo] = useState("");
-  const [mailBody, setMailBody] = useState("");
+  const [body, setbody] = useState("");
+  const [showModal, setShowModal] = useState("");
 
   const onSubmit = () => {
     
-    const mail = { subject, to, mailBody };
-
+    const mail = { subject, to, body };
+    setShowModal("Mail sent");
     console.log(mail);
 
-    fetch("http://localhost:3000/micic", {
+    /* fetch("http://localhost:3000/micic", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +25,7 @@ const Mail = () => {
       body: JSON.stringify(mail)
     })
       .then(res => res.json())
-      .then(res => console.log(res));
+      .then(res => console.log(res)); */
   };
 
   const handleChange = setterFunction => event => {
@@ -32,21 +34,29 @@ const Mail = () => {
 
   const onLogout = () => {
     localStorage.removeItem("token");
-    Router.push("/login");
+    Router.push("/");
   }
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) 
+      Router.push("/");
+  }, [])
 
   return (
     <>
       <div className={styles.containerStyle}>
         <span>Subject</span>
-        <input value={subject} onChange={handleChange(setSubject)} /> <br /><br />
+        <input value={subject} onChange={handleChange(setSubject)} className={styles.subjectInput} /> <br /><br />
         <span>To</span>
-        <input value={to} onChange={handleChange(setTo)} /> <br /><br />
+        <input value={to} onChange={handleChange(setTo)} className={styles.toInput} /> <br /><br />
         <span>Body</span>
-        <textarea value={mailBody} onChange={handleChange(setMailBody)} /> <br /><br />
+        <textarea value={body} onChange={handleChange(setbody)} className={styles.bodyInput} /> <br /><br />
       </div>
-      <button className={styles.buttonStyle} onClick={onSubmit}>Submit</button> <br />
-      <button className={styles.buttonStyle} onClick={onLogout}>Logout</button>
+      <div className={styles.buttonContainer}>
+        <button className={styles.buttonStyle} onClick={onSubmit}>Submit</button>
+        <button className={styles.buttonStyle} onClick={onLogout}>Logout</button>
+      </div>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
     </>
   );
 };
