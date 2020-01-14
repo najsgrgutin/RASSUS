@@ -5,3 +5,6 @@ auth_service/AuthService/.vs/AuthService/v16/Server/sqlite3/storage.ide-wal
 keycloak/standalone/configuration/logging.properties
 keycloak/standalone/log/server.log
 keycloak/standalone/tmp/startup-marker
+.env
+rassus_service/.idea/
+*.pyc
