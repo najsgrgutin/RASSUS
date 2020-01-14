@@ -11,7 +11,10 @@ class IsAuthenticated(permissions.BasePermission):
         public_key = public_key.encode('ascii')
 
         algorithm = settings.JWT_ALGORITHM
-        token = request.META.get("HTTP_AUTHORIZATION").split(' ')[1]
+        try:
+            token = request.META.get("HTTP_AUTHORIZATION").split(' ')[1]
+        except IndexError:
+            raise Exception("You must provide HTTP_AUTHORIZATION header.")
 
         try:
             jwt.decode(token, public_key, algorithms=algorithm)
