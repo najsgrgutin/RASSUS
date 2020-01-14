@@ -7,10 +7,10 @@ import styles from "../styles/Login.module.css";
 import ErrorMessage from "../components/ErrorMessage";
 import jwt from "jsonwebtoken";
 
-const publicKey = "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhdrwpRXz5RKiqClu9IzbGjuLYKnZmsloTd/IAEVpUFbKIRgw6GiTWClxv4d7EMCNx3Kcze9urtrbmd2U0uYLMd1fV6LPqN+uHpZwxa1OviEC95Al2yBt3kLNhbhUr7dx5GrUgaWn7ohFqiH1TvD3XuieP0pyhKMfJExyxAMoZDa4zao4RpWTziLLyHatqM/88IVMvgwmzhp5xlHmSyR7dnHbxfPheO7wwb28wFJAbsKlm94Dl+SB9OduCT12645Gs5byhnMwdboR03lyzzyXeaXCvd3F/a6fmwpjbQxXJek5USh+wVnLLxoNxm48ZCwbXO/9xrkzjXaSqkFcOl6dEwIDAQAB-----END PUBLIC KEY-----";
-const clientSecret = "489eedf0-1ad8-4ebd-bf60-426709339e66";
+const publicKey = "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgs5aXVEJYNv2pd3budV6CLgu3erXM9z/U5EO6/28bQC0sWx3UtiikBw0jkj36njw42Cw07cwbK8NxPOpxjmb3UNBb5/Rg0xyk/cr71wbXZHASIljqJznYW8svds3Pucto1ATSDN0AcQ8sC/ffzz/hWsGZiVpDFt9whY2R/zxA+2RsP1m5R2J06yddEZICYTlsMVQjTV5uvKPxae7MWMYYs15WrZR0E7vqzbMo7nq7WCqRKFDfcsCpL+bIkXYY+Df0g7Y3NGPnpbaT1/wm7SH+oHPbzHOH1zHiP+GFsMpTeJsqsc3ck+A2cbdb8i0VYsEb6ubXW1j+vnIKpx+WxB2TQIDAQAB-----END PUBLIC KEY-----";
+const clientSecret = "f4e5a47f-e944-4b32-9b7b-7d85d86268ae";
 const grantType = "password";
-const clientId = "frontend";
+const clientId = "client1";
 
 const Login = () => {
   
@@ -30,7 +30,7 @@ const Login = () => {
     axios({
       method: "post",
       url:
-        "http://localhost:8080/auth/realms/govanj/protocol/openid-connect/token",
+        "http://localhost:8080/auth/realms/RASSUS/protocol/openid-connect/token",
       data: queryString.stringify(params),
       config: {
         headers: {
