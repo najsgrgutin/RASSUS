@@ -25,14 +25,8 @@ namespace AuthService
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            RsaSecurityKey signingKey = null;
-
-            using (RSACryptoServiceProvider publicRsa = new RSACryptoServiceProvider(2048))
-            {
-                var publicKeyXml = File.ReadAllText(Configuration.GetSection("rsaPublic").Value);
-                publicRsa.ImportParameters(RsaParametersHelper.FromXmlString(publicKeyXml));
-                signingKey = new RsaSecurityKey(publicRsa);
-            }
+            var publicKeyXml = File.ReadAllText(Configuration.GetSection("rsaPublic").Value);
+            var signingKey = new RsaSecurityKey(RsaParametersHelper.FromXmlString(publicKeyXml));
 
             services.AddAuthentication(x =>
             {
@@ -48,8 +42,8 @@ namespace AuthService
                 {
                     IssuerSigningKey = signingKey,
                     ValidateIssuer = false,
-                    ValidateAudience = false//,
-                    //ValidateLifetime = true
+                    ValidateAudience = false,
+                    ValidateLifetime = true
                 };
             });
         }
@@ -74,6 +68,8 @@ namespace AuthService
                 b.AllowAnyMethod();
                 b.AllowAnyHeader();
             });
+
+            app.UseAuthentication();
 
             app.UseMvc();
         }
