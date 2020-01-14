@@ -16,7 +16,7 @@ class MailApiView(APIView):
 
         subject = vd['subject']
         message = vd['body']
-        recipients = vd['recipients']
+        recipients = vd['to']
 
         if send_mail(subject=subject, message=message, from_email=settings.DEFAULT_FROM_EMAIL, recipient_list=recipients):
             return Response(status=status.HTTP_200_OK)
