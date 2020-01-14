@@ -6,7 +6,7 @@ namespace AuthService.Helpers
 {
     public static class RsaParametersHelper
     {
-        public static void FromXmlString(this RSA rsa, string xmlString)
+        public static RSAParameters FromXmlString(string xmlString)
         {
             RSAParameters parameters = new RSAParameters();
 
@@ -21,12 +21,6 @@ namespace AuthService.Helpers
                     {
                         case "Modulus": parameters.Modulus = (string.IsNullOrEmpty(node.InnerText) ? null : Convert.FromBase64String(node.InnerText)); break;
                         case "Exponent": parameters.Exponent = (string.IsNullOrEmpty(node.InnerText) ? null : Convert.FromBase64String(node.InnerText)); break;
-                        case "P": parameters.P = (string.IsNullOrEmpty(node.InnerText) ? null : Convert.FromBase64String(node.InnerText)); break;
-                        case "Q": parameters.Q = (string.IsNullOrEmpty(node.InnerText) ? null : Convert.FromBase64String(node.InnerText)); break;
-                        case "DP": parameters.DP = (string.IsNullOrEmpty(node.InnerText) ? null : Convert.FromBase64String(node.InnerText)); break;
-                        case "DQ": parameters.DQ = (string.IsNullOrEmpty(node.InnerText) ? null : Convert.FromBase64String(node.InnerText)); break;
-                        case "InverseQ": parameters.InverseQ = (string.IsNullOrEmpty(node.InnerText) ? null : Convert.FromBase64String(node.InnerText)); break;
-                        case "D": parameters.D = (string.IsNullOrEmpty(node.InnerText) ? null : Convert.FromBase64String(node.InnerText)); break;
                     }
                 }
             }
@@ -35,7 +29,7 @@ namespace AuthService.Helpers
                 throw new Exception("Invalid XML RSA key.");
             }
 
-            rsa.ImportParameters(parameters);
+            return parameters;
         }
     }
 }

@@ -27,10 +27,10 @@ namespace AuthService
 
             RsaSecurityKey signingKey = null;
 
-            using (RSA publicRsa = RSA.Create())
+            using (RSACryptoServiceProvider publicRsa = new RSACryptoServiceProvider(2048))
             {
                 var publicKeyXml = File.ReadAllText(Configuration.GetSection("rsaPublic").Value);
-                RsaParametersHelper.FromXmlString(publicRsa, publicKeyXml);
+                publicRsa.ImportParameters(RsaParametersHelper.FromXmlString(publicKeyXml));
                 signingKey = new RsaSecurityKey(publicRsa);
             }
 
@@ -43,13 +43,13 @@ namespace AuthService
             {
                 x.RequireHttpsMetadata = false;
                 x.SaveToken = true;
+                x.IncludeErrorDetails = true;
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuerSigningKey = true,
                     IssuerSigningKey = signingKey,
                     ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ValidateLifetime = true
+                    ValidateAudience = false//,
+                    //ValidateLifetime = true
                 };
             });
         }
