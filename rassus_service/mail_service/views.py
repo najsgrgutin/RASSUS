@@ -5,9 +5,11 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from mail_service.serializers import MailSerializer
+from mail_service.permissions import IsAuthenticated
 
 
 class MailApiView(APIView):
+    permission_classes = (IsAuthenticated,)
 
     def post(self, request, *args, **kwargs):
         serializer = MailSerializer(data=request.data)
