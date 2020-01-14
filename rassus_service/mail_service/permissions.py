@@ -15,9 +15,13 @@ class IsAuthenticated(permissions.BasePermission):
             token = request.META.get("HTTP_AUTHORIZATION").split(' ')[1]
         except IndexError:
             raise Exception("You must provide HTTP_AUTHORIZATION header.")
+        except AttributeError:
+            raise Exception("You must provide HTTP_AUTHORIZATION header.")
 
         try:
             jwt.decode(token, public_key, algorithms=algorithm)
+            return True
+        except jwt.InvalidAudienceError:
             return True
         except Exception as e:
             print(e)

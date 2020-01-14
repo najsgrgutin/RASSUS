@@ -2,9 +2,12 @@ auth_service/AuthService/.vs/AuthService/v16/Server/sqlite3/db.lock
 auth_service/AuthService/.vs/AuthService/v16/Server/sqlite3/storage.ide
 auth_service/AuthService/.vs/AuthService/v16/Server/sqlite3/storage.ide-shm
 auth_service/AuthService/.vs/AuthService/v16/Server/sqlite3/storage.ide-wal
+auth_service/AuthService/obj
+auth_service/AuthService/bin
 keycloak/standalone/configuration/logging.properties
 keycloak/standalone/log/server.log
 keycloak/standalone/tmp/startup-marker
 .env
 rassus_service/.idea/
 *.pyc
+Frontend/node_modules
