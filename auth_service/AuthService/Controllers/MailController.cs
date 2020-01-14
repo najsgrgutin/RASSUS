@@ -1,4 +1,6 @@
-﻿using AuthService.Helpers;
+﻿using System;
+using System.Linq;
+using AuthService.Helpers;
 using AuthService.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +25,7 @@ namespace AuthService.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ReceiveMailData(Mail mailData)
+        public async Task<IActionResult> ReceiveMailData(MailPost mailData)
         {
             if (HttpContext.User.Identity is ClaimsIdentity identity)
             {
@@ -85,7 +87,21 @@ namespace AuthService.Controllers
 
                 mailData.Body += mailSignature;
 
-                var result = _api.PostData("send-mail", mailData);
+                var listTo = mailData.To.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList();
+                for (var i = 0; i < listTo.Count; i++)
+                {
+                    listTo[i] = listTo[i].Trim();
+                }
+
+                //create mail object
+                Mail mail = new Mail()
+                {
+                    To = listTo,
+                    Body = mailData.Body,
+                    Subject = mailData.Subject
+                };
+
+                var result = _api.PostData("send-mail", mail);
 
                 if (result != null)
                 {
@@ -94,13 +110,12 @@ namespace AuthService.Controllers
                         message = "Mail sent successfully."
                     });
                 }
-                else
+
+
+                return NotFound(new
                 {
-                    return NotFound(new
-                    {
-                        message = "Mail created but could not be sent."
-                    });
-                }
+                    message = "Mail created but could not be sent."
+                });
             }
 
             return Unauthorized();

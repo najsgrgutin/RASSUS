@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <Version>1.0.0.0</Version>
+    <Version>1.1.0.0</Version>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <Authors>Davor Mićić</Authors>
     <Description>Web API for RASSUS project Client (portal)</Description>
