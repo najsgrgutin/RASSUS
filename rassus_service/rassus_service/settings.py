@@ -125,13 +125,12 @@ STATIC_URL = '/static/'
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = ''
-EMAIL_USE_TLS = False
-EMAIL_PORT = 0
+EMAIL_HOST = 'evaluator.app.team@gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
 EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-DEFAULT_FROM_EMAIL = ''
-SERVER_EMAIL = ''
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = '[RASSUS] Mail service <noreply@mail_service.com>'
 
 JWT_PUBLIC_KEY = env.unicode('JWT_PUBLIC_KEY')
 JWT_ALGORITHM = env.unicode('JWT_ALGORITHM')
