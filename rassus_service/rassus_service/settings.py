@@ -120,3 +120,5 @@ DEFAULT_FROM_EMAIL = 'evaluator.app.team@gmail.com'
 
 JWT_PUBLIC_KEY = os.environ.get('JWT_PUBLIC_KEY')
 JWT_ALGORITHM = os.environ.get('JWT_ALGORITHM')
+
+django_heroku.settings(locals())
