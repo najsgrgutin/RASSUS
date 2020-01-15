@@ -1,0 +1,1 @@
+web: gunicorn rassus_service.wsgi
