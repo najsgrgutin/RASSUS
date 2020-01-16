@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -191,10 +191,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
 /* harmony import */ var _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/Mail.module.css */ "./styles/Mail.module.css");
 /* harmony import */ var _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-loader-spinner */ "react-loader-spinner");
+/* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_loader_spinner__WEBPACK_IMPORTED_MODULE_5__);
 
 var _jsxFileName = "C:\\Users\\Dorijan\\Documents\\RASSUS\\Frontend\\pages\\mail.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -217,8 +220,14 @@ const Mail = () => {
     0: showModal,
     1: setShowModal
   } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("");
+  const {
+    0: showSpinner,
+    1: setShowSpinner
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("");
 
   const onSubmit = () => {
+    setShowSpinner(true);
+
     if (subject === "" || to === "" || body === "") {
       setShowModal("Please fill out all fields");
       return;
@@ -239,6 +248,7 @@ const Mail = () => {
       },
       body: _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(mail)
     }).then(res => {
+      setShowSpinner(false);
       if (res.status === 200) setShowModal("Mail sent");else setShowModal("Mail could not be sent");
       return res.json();
     }).then(res => console.log(res)).catch(err => console.log(err));
@@ -260,13 +270,13 @@ const Mail = () => {
     className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.containerStyle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 61
     },
     __self: undefined
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 62
     },
     __self: undefined
   }, "Subject"), __jsx("input", {
@@ -275,25 +285,25 @@ const Mail = () => {
     className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.subjectInput,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 63
     },
     __self: undefined
   }), " ", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 63
     },
     __self: undefined
   }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 63
     },
     __self: undefined
   }), __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 64
     },
     __self: undefined
   }, "To"), __jsx("input", {
@@ -302,25 +312,25 @@ const Mail = () => {
     className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.toInput,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 65
     },
     __self: undefined
   }), " ", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 65
     },
     __self: undefined
   }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 65
     },
     __self: undefined
   }), __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 66
     },
     __self: undefined
   }, "Body"), __jsx("textarea", {
@@ -329,26 +339,26 @@ const Mail = () => {
     className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.bodyInput,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 67
     },
     __self: undefined
   }), " ", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 67
     },
     __self: undefined
   }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 67
     },
     __self: undefined
   })), __jsx("div", {
     className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.buttonContainer,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 69
     },
     __self: undefined
   }, __jsx("button", {
@@ -356,7 +366,7 @@ const Mail = () => {
     onClick: onSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 70
     },
     __self: undefined
   }, "Submit"), __jsx("button", {
@@ -364,7 +374,7 @@ const Mail = () => {
     onClick: onLogout,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 71
     },
     __self: undefined
   }, "Logout")), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -372,10 +382,27 @@ const Mail = () => {
     setShowModal: setShowModal,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 73
     },
     __self: undefined
-  }));
+  }), !showSpinner ? null : __jsx("div", {
+    className: _styles_Mail_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.spinnerContainer,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: undefined
+  }, __jsx(react_loader_spinner__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    type: "ThreeDots",
+    color: "#2B6AF0",
+    height: 100,
+    width: 100,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    },
+    __self: undefined
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Mail);
@@ -396,7 +423,8 @@ module.exports = {
 	"buttonContainer": "_2NKHJ-sFA0mr8ngf49TQiA",
 	"subjectInput": "_2QYNulPVfA1Zy78ssLSPiX",
 	"toInput": "_13MAS2jxyLldrdyCsyPT4b",
-	"bodyInput": "_1tBpTVtnHQ8Lhbjg6GzPig"
+	"bodyInput": "_1tBpTVtnHQ8Lhbjg6GzPig",
+	"spinnerContainer": "_2vtKWEIDn39i2_V8rMWPLY"
 };
 
 /***/ }),
@@ -416,7 +444,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!*****************************!*\
   !*** multi ./pages/mail.js ***!
   \*****************************/
@@ -458,6 +486,17 @@ module.exports = require("next/router");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-loader-spinner":
+/*!***************************************!*\
+  !*** external "react-loader-spinner" ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-loader-spinner");
 
 /***/ })
 

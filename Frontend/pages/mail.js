@@ -2,15 +2,17 @@ import { useState, useEffect } from "react";
 import Router from "next/router";
 import Modal from "../components/Modal";
 import styles from "../styles/Mail.module.css";
+import Loader from "react-loader-spinner";
 
 const Mail = () => {
   const [subject, setSubject] = useState("");
   const [to, setTo] = useState("");
   const [body, setbody] = useState("");
   const [showModal, setShowModal] = useState("");
+  const [showSpinner, setShowSpinner] = useState("");
 
   const onSubmit = () => {
-
+    setShowSpinner(true);
     if (subject === "" || to === "" || body === "") {
       setShowModal("Please fill out all fields");
       return;
@@ -29,6 +31,7 @@ const Mail = () => {
       body: JSON.stringify(mail)
     })
       .then(res => {
+        setShowSpinner(false);
         if (res.status === 200)
           setShowModal("Mail sent");
         else 
@@ -68,6 +71,13 @@ const Mail = () => {
         <button className={styles.logoutButton} onClick={onLogout}>Logout</button>
       </div>
       <Modal showModal={showModal} setShowModal={setShowModal} />
+      {!showSpinner ? 
+        null
+        :
+        <div className={styles.spinnerContainer}>
+          <Loader type="ThreeDots" color="#2B6AF0" height={100} width={100} />
+        </div>
+      }
     </>
   );
 };
