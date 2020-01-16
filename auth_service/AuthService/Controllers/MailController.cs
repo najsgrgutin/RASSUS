@@ -101,7 +101,7 @@ namespace AuthService.Controllers
                     Subject = mailData.Subject
                 };
 
-                var result = _api.PostData("send-mail", mail);
+                var result = _api.PostData("send-mail/", mail);
 
                 if (result)
                 {
