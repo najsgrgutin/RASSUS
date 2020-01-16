@@ -103,7 +103,7 @@ namespace AuthService.Controllers
 
                 var result = _api.PostData("send-mail", mail);
 
-                if (result != null)
+                if (result)
                 {
                     return Ok(new
                     {
@@ -114,7 +114,8 @@ namespace AuthService.Controllers
 
                 return NotFound(new
                 {
-                    message = "Mail created but could not be sent."
+                    message = "Mail created but could not be sent.",
+                    mail
                 });
             }
 

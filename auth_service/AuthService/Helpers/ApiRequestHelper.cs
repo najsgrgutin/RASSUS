@@ -32,7 +32,7 @@ namespace AuthService.Helpers
             }
         }
 
-        public T PostData<T>(string controller, T data)
+        public bool PostData<T>(string controller, T data)
         {
             try
             {
@@ -42,15 +42,15 @@ namespace AuthService.Helpers
                     Task.Delay(250);
                 }
 
-                return (response.Result);
+                return response.Result;
             }
             catch
             {
-                return default;
+                return false;
             }
         }
 
-        private async Task<T> PostDataAsync<T>(string controller, T data)
+        private async Task<bool> PostDataAsync<T>(string controller, T data)
         {
             var postBody = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
             try
@@ -58,9 +58,7 @@ namespace AuthService.Helpers
                 var requestResult = await Client.PostAsync(controller, postBody);
                 if (requestResult.StatusCode == HttpStatusCode.Created)
                 {
-                    var responseString = await requestResult.Content.ReadAsStringAsync();
-                    var response = JsonConvert.DeserializeObject<T>(responseString);
-                    return response;
+                    return true;
                 }
             }
             catch
@@ -71,7 +69,7 @@ namespace AuthService.Helpers
                 postBody.Dispose();
             }
 
-            return default;
+            return false;
         }
     }
 }
