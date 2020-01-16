@@ -21,7 +21,8 @@ namespace AuthService.Helpers
                 var baseUrl = configuration.GetSection("APIUrl").Value;
                 Client.BaseAddress = new Uri(baseUrl);
                 Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                Client.DefaultRequestHeaders.Add("Authorization", $"JWT {token}");
+                Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                //Client.DefaultRequestHeaders.Add("Authorization", $"JWT {token}");
                 ServicePointManager.ServerCertificateValidationCallback +=
                     (sender, cert, chain, sslPolicyErrors) => true;
             }
