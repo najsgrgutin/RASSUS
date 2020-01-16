@@ -1,22 +1,33 @@
 .modalContainer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000077;
-  }
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000077;
+}
   
-  .modal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #FFFFFF;
-    width: 400px;
-    height: 300px;
-    margin-bottom: 200px;
-  }
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  width: 400px;
+  height: 300px;
+  margin-bottom: 200px;
+}
+
+.button {
+  color: #FFFFFF;
+  width: 150px;
+  height: 35px;
+  font-size: 15px;
+  background-color: #2B6AF0;
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+}

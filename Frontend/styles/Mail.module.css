@@ -5,11 +5,31 @@ body {
 .containerStyle {
   padding: 20px;
   margin: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #2B6AF0;
 }
 
-.buttonStyle {
-  margin: 0px 0px 8px 20px;
+.submitButton {
+  color: #FFFFFF;
+  width: 150px;
+  height: 35px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  background-color: #2B6AF0;
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+}
+
+.logoutButton {
+  color: #2B6AF0;
+  width: 150px;
+  height: 35px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  border: 1px solid #2B6AF0;
+  border-radius: 4px;
 }
 
 .buttonContainer {

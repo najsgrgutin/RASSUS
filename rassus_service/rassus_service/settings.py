@@ -117,5 +117,6 @@ EMAIL_HOST_USER = 'evaluator.app.team@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = 'evaluator.app.team@gmail.com'
 
+# JWT Settings
 JWT_PUBLIC_KEY = os.environ.get('JWT_PUBLIC_KEY')
 JWT_ALGORITHM = os.environ.get('JWT_ALGORITHM')

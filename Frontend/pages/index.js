@@ -5,9 +5,7 @@ import queryString from "querystring";
 import axios from "axios";
 import styles from "../styles/Login.module.css";
 import ErrorMessage from "../components/ErrorMessage";
-import jwt from "jsonwebtoken";
 
-const publicKey = "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgs5aXVEJYNv2pd3budV6CLgu3erXM9z/U5EO6/28bQC0sWx3UtiikBw0jkj36njw42Cw07cwbK8NxPOpxjmb3UNBb5/Rg0xyk/cr71wbXZHASIljqJznYW8svds3Pucto1ATSDN0AcQ8sC/ffzz/hWsGZiVpDFt9whY2R/zxA+2RsP1m5R2J06yddEZICYTlsMVQjTV5uvKPxae7MWMYYs15WrZR0E7vqzbMo7nq7WCqRKFDfcsCpL+bIkXYY+Df0g7Y3NGPnpbaT1/wm7SH+oHPbzHOH1zHiP+GFsMpTeJsqsc3ck+A2cbdb8i0VYsEb6ubXW1j+vnIKpx+WxB2TQIDAQAB-----END PUBLIC KEY-----";
 const clientSecret = "f4e5a47f-e944-4b32-9b7b-7d85d86268ae";
 const grantType = "password";
 const clientId = "client1";
@@ -40,15 +38,8 @@ const Login = () => {
     })
       .then(res => {
         if (res.request.status === 200) {
-          // jwt.verify(res.data.access_token, publicKey, (err, decoded) => {
-          //   if (err) {
-          //     console.log("Token couldn't be verified");
-          //   } else {
-          //     console.log(decoded);
-              localStorage.setItem("token", res.data.access_token);
-              Router.push("/mail");
-          //   }
-          // });
+          localStorage.setItem("token", res.data.access_token);
+          Router.push("/mail");
         } else {
           console.log("Something went wrong");
         }

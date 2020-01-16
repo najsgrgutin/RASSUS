@@ -15,7 +15,7 @@ const Modal = ({ showModal, setShowModal }) => {
       <div className={styles.modalContainer} onClick={onCloseModal}>
         <div className={styles.modal} onClick={stopPropagation}>
           <h3>{showModal}</h3>
-          <button onClick={onCloseModal}>Ok</button>
+          <button className={styles.button} onClick={onCloseModal}>Ok</button>
         </div>
       </div>
     );
