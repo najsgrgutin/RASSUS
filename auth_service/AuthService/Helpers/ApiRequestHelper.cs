@@ -37,6 +37,7 @@ namespace AuthService.Helpers
             try
             {
                 var response = PostDataAsync(controller, data);
+
                 while (!response.IsCompleted)
                 {
                     Task.Delay(250);
@@ -56,7 +57,7 @@ namespace AuthService.Helpers
             try
             {
                 var requestResult = await Client.PostAsync(controller, postBody);
-                if (requestResult.StatusCode == HttpStatusCode.Created)
+                if (requestResult.StatusCode == HttpStatusCode.OK)
                 {
                     return true;
                 }
