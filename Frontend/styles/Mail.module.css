@@ -1,0 +1,78 @@
+body {
+  background-color: rgba(248, 248, 253);
+}
+
+.containerStyle {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #2B6AF0;
+}
+
+.submitButton {
+  color: #FFFFFF;
+  width: 150px;
+  height: 35px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  background-color: #2B6AF0;
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+}
+
+.logoutButton {
+  color: #2B6AF0;
+  width: 150px;
+  height: 35px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  border: 1px solid #2B6AF0;
+  border-radius: 4px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  margin: 20px;
+}
+
+.subjectInput {
+  margin-bottom: 10px;
+  margin-left: 20px;
+  height: 30px;
+  width: 300px;
+  border: 0;
+  border-bottom: 1px solid grey;
+  padding-left: 10px;
+}
+
+.toInput {
+  margin-bottom: 10px;
+  margin-left: 50px;
+  height: 30px;
+  width: 800px;
+  border: 0;
+  border-bottom: 1px solid grey;
+  padding-left: 10px;
+}
+
+.bodyInput {
+  height: 300px;
+  width: 800px;
+  margin-left: 30px;
+}
+
+.spinnerContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000077;
+}
